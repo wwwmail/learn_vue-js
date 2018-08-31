@@ -6,15 +6,12 @@
 </template>
 <script>
 import cart from '../store/cart';
-import {mapGetters} from 'vuex';
 export default {
     name: 'NavigationBar',
     computed: {
-        /* cartItemsCount() {
+        cartItemsCount() {
             return cart.totalItems;
-        } */
-        ...mapGetters({cartItemsCount: 'totalItems'})
-        //...mapGetters(['totalItems'])
+        }
     }
 }
 </script>

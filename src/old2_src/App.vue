@@ -27,24 +27,20 @@ export default {
   created() {
     this.currentPath = this.runPath;
   },
-  mounted () {
-    
-  },
   components: {
     NavigationBar
   },
   computed: {
     runPath() {
       return this.$router.currentRoute.path
-    },
-    cart() {}
+    }
   },
   watch: {
     '$route' (to, from) {
       this.currentPath = to.path;
       this.fromPath = from.path;
       this.params = to.params;
-    },
+    }
   }
 }
 </script>

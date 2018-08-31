@@ -1,11 +1,10 @@
 <template>
     <div>
-        <h1>{{ 'Cart Page' | test }}</h1>
+        <h1>Cart Page</h1>
         <cart-item 
             v-for="(item, index) in list" 
             :key="index" 
-            :id="index"
-            @test="test2" 
+            :id="index" 
             v-model="item.count"
             @remove="remove" ></cart-item>
         <div>Total: {{ cartTotal }} $</div>
@@ -21,11 +20,10 @@ export default {
     },
     computed: {
         list() {
-            return this.$store.getters.cart;
+            return cart.products;
         },
         cartTotal() {
-            // return cart.total;
-            return this.$store.getters.total
+            return cart.total;
         }
     },
     methods: {
@@ -33,9 +31,6 @@ export default {
             if (confirm('Are You serious ?')) {
                 cart.remove(id)
             }
-        },
-        test2(data) {
-            alert(data);
         }
     }
 }
